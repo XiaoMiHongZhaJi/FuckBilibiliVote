@@ -27,8 +27,18 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-    - name: Upload APK
+    - name: Show build output files
+      # ls -R 会递归列出目录下的所有文件和文件夹
+      run: ls -R app/build/outputs/
+
+    - name: Upload Debug APK
       uses: actions/upload-artifact@v4
       with:
-        name: FuckBilibiliVote  # 上传后显示的文件名
-        path: app/build/outputs/apk/FuckBilibiliVote.apk # APK文件的路径
+        name: FuckBilibiliVote-debug-apk
+        path: app/build/outputs/apk/debug/*.apk
+      
+    - name: Upload Release APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: FuckBilibiliVote-release-apk
+        path: app/build/outputs/apk/release/*.apk
