@@ -2,6 +2,7 @@
 <resources>
     <string-array name="xposed_scope">
         <item>tv.danmaku.bili</item>
+        <item>tv.danmaku.bilj</item>
         <item>tv.danmaku.bilibilihd</item>
         <item>com.bilibili.app.in</item>
         <item>com.bilibili.app.blue</item>
